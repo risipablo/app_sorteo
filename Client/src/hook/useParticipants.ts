@@ -4,7 +4,7 @@ import axios from "axios"
 // import { config } from "../config/data"
 
 
-const ServerFront = "http://localhost:3001"
+const ServerFront = "https://app-sorteo-tnrq.onrender.com"
 
 export const useParticipante = () => {
     const [participant, setParticipant] = useState<IParticipants[]>([])
