@@ -1,0 +1,105 @@
+.container-sorteo {
+  text-align: center;
+  margin: 2rem auto;
+  min-height: 100vh;
+}
+
+.reloj-container p {
+  margin: 10px 0;
+}
+
+.sortear {
+  background-color: #800080;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sortear p {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: rgb(236, 233, 233);
+}
+
+.sortear:hover {
+  background-color: #9400d3;
+}
+
+.ganadores {
+  margin-top: 20px;
+}
+
+.ganadores h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: purple;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.ganadores p {
+  font-size: 18px;
+  margin: 1rem 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s forwards;
+}
+
+.ganador1 {
+  animation-delay: 0.5s;
+}
+
+.ganador2 {
+  animation-delay: 1s;
+}
+.ganador3 {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fecha-limite {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  max-width: 400px;
+  margin: 1rem auto; 
+  padding: 10px; 
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.fecha-limite label {
+  font-size: 1rem;
+  margin: 1rem auto; 
+  font-weight: bold; 
+  color: #333; 
+}
+
+.fecha-limite input {
+  padding: 8px; 
+  font-size: 14px; 
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
+  outline: none; 
+  transition: border-color 0.3s ease; 
+}
+
+.fecha-limite input:focus {
+  border-color: #6c63ff; 
+  box-shadow: 0 0 4px rgba(108, 99, 255, 0.5); 
+}
