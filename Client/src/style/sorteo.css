@@ -9,97 +9,357 @@
 }
 
 .sortear {
-  background-color: #800080;
+  background: linear-gradient(135deg, #800080 0%, #9400d3 100%);
   border: none;
-  padding: 10px 20px;
+  padding: 15px 40px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(128, 0, 128, 0.4);
+  margin: 2rem 0;
 }
 
 .sortear p {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: rgb(236, 233, 233);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .sortear:hover {
-  background-color: #9400d3;
+  background: linear-gradient(135deg, #9400d3 0%, #800080 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(148, 0, 211, 0.5);
 }
 
+.sortear:active {
+  transform: translateY(-1px);
+}
+
+/* Sección de ganadores */
 .ganadores {
-  margin-top: 20px;
+  margin-top: 3rem;
+  padding: 2rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .ganadores h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: purple;
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #c44569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.ganadores h2::before {
+  content: '🎉';
+  position: absolute;
+  left: -60px;
+  font-size: 2.5rem;
+  animation: bounce 1s infinite;
+}
+
+.ganadores h2::after {
+  content: '🎉';
+  position: absolute;
+  right: -60px;
+  font-size: 2.5rem;
+  animation: bounce 1s infinite;
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .ganadores p {
-  font-size: 18px;
-  margin: 1rem 0;
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #800080;
+  padding: 2rem 3rem;
+  background: linear-gradient(135deg, rgba(128, 0, 128, 0.1) 0%, rgba(148, 0, 211, 0.15) 100%);
+  border-radius: 20px;
+  border: 3px solid #800080;
+  box-shadow: 0 10px 40px rgba(128, 0, 128, 0.3),
+              0 0 0 10px rgba(128, 0, 128, 0.05),
+              0 0 0 20px rgba(128, 0, 128, 0.03);
+  position: relative;
+  min-width: 350px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+body.dark .ganadores p {
+  color: #b19cd9;
+  background: linear-gradient(135deg, rgba(177, 156, 217, 0.15) 0%, rgba(148, 0, 211, 0.2) 100%);
+  border-color: #b19cd9;
+  box-shadow: 0 10px 40px rgba(177, 156, 217, 0.3),
+              0 0 0 10px rgba(177, 156, 217, 0.05),
+              0 0 0 20px rgba(177, 156, 217, 0.03);
+}
+
+/* Efecto de confeti en las esquinas */
+.ganadores p::before,
+.ganadores p::after {
+  content: '✨';
+  position: absolute;
+  font-size: 2rem;
+  animation: sparkle 1.5s infinite;
+}
+
+.ganadores p::before {
+  top: -15px;
+  left: -15px;
+}
+
+.ganadores p::after {
+  bottom: -15px;
+  right: -15px;
+  animation-delay: 0.5s;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3) rotate(180deg);
+    opacity: 0.7;
+  }
 }
 
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.5s forwards;
+  transform: translateY(30px) scale(0.9);
+  animation: fadeInScale 0.8s forwards;
 }
 
 .ganador1 {
-  animation-delay: 0.5s;
+  animation-delay: 0.3s;
 }
 
 .ganador2 {
-  animation-delay: 1s;
-}
-.ganador3 {
-  animation-delay: 0.5s;
+  animation-delay: 0.8s;
 }
 
-@keyframes fadeIn {
-  to {
+.ganador3 {
+  animation-delay: 1.3s;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  60% {
+    transform: translateY(-5px) scale(1.05);
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
+/* Fecha límite */
 .fecha-limite {
   display: flex;
   flex-direction: column; 
   align-items: center; 
-  max-width: 400px;
-  margin: 1rem auto; 
-  padding: 10px; 
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 8px; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  max-width: 450px;
+  margin: 1.5rem auto; 
+  padding: 1.5rem; 
+  background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+  border: 2px solid #e0e0e0;
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+}
+
+body.dark .fecha-limite {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-color: #3a3a3a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .fecha-limite label {
-  font-size: 1rem;
-  margin: 1rem auto; 
-  font-weight: bold; 
+  font-size: 1.1rem;
+  margin-bottom: 1rem; 
+  font-weight: 700; 
   color: #333; 
 }
 
+body.dark .fecha-limite label {
+  color: #e9e7e7;
+}
+
 .fecha-limite input {
-  padding: 8px; 
-  font-size: 14px; 
-  border: 1px solid #ddd; 
-  border-radius: 4px; 
+  padding: 12px 16px; 
+  font-size: 1rem; 
+  border: 2px solid #e0e0e0; 
+  border-radius: 8px; 
   outline: none; 
-  transition: border-color 0.3s ease; 
+  transition: all 0.3s ease;
+  background: #fff;
+  color: #333;
+  min-width: 250px;
+}
+
+body.dark .fecha-limite input {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: #e9e7e7;
+  color-scheme: dark;
 }
 
 .fecha-limite input:focus {
-  border-color: #6c63ff; 
-  box-shadow: 0 0 4px rgba(108, 99, 255, 0.5); 
+  border-color: #800080; 
+  box-shadow: 0 0 0 4px rgba(128, 0, 128, 0.15); 
+}
+
+body.dark .fecha-limite input:focus {
+  border-color: #b19cd9;
+  box-shadow: 0 0 0 4px rgba(177, 156, 217, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ganadores {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .ganadores h2 {
+    font-size: 2rem;
+  }
+
+  .ganadores h2::before,
+  .ganadores h2::after {
+    font-size: 2rem;
+    left: -50px;
+    right: -50px;
+  }
+
+  .ganadores p {
+    font-size: 2rem;
+    padding: 1.5rem 2rem;
+    min-width: auto;
+    width: 90%;
+    max-width: 400px;
+    letter-spacing: 2px;
+  }
+
+  .ganadores p::before,
+  .ganadores p::after {
+    font-size: 1.5rem;
+  }
+
+  .sortear {
+    padding: 12px 30px;
+  }
+
+  .sortear p {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  .fecha-limite {
+    max-width: 90%;
+    padding: 1.25rem;
+  }
+
+  .fecha-limite input {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ganadores {
+    padding: 1rem;
+    gap: 1.25rem;
+  }
+
+  .ganadores h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+  }
+
+  .ganadores h2::before,
+  .ganadores h2::after {
+    font-size: 1.5rem;
+    left: -35px;
+    right: -35px;
+  }
+
+  .ganadores p {
+    font-size: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    width: 95%;
+    letter-spacing: 1.5px;
+    border-width: 2px;
+  }
+
+  .ganadores p::before,
+  .ganadores p::after {
+    font-size: 1.25rem;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+  }
+
+  .sortear {
+    padding: 10px 25px;
+    margin: 1.5rem 0;
+  }
+
+  .sortear p {
+    font-size: 1rem;
+    letter-spacing: 0.8px;
+  }
+
+  .fecha-limite {
+    padding: 1rem;
+  }
+
+  .fecha-limite label {
+    font-size: 1rem;
+  }
+
+  .fecha-limite input {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .ganadores h2::before,
+  .ganadores h2::after {
+    display: none;
+  }
+
+  .ganadores p {
+    font-size: 1.25rem;
+    padding: 1rem;
+  }
 }

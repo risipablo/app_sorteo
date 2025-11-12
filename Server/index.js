@@ -9,9 +9,10 @@ const app = express()
 app.use(express.json())
 
 const corsOption = {
-    origin: ['http://localhost:5173'],
-    methods: 'GET,POST,DELETE,PATCH',
-    optionsSuccessStatus: 200
+    origin: ['http://localhost:5173','https://app-sorteo-bgv7.vercel.app','https://app-sorteo-tnrq.onrender.com'],
+    optionsSuccessStatus: 200,
+    methods: 'GET,POST,DELETE,PUT,PATCH',
+    credentials: true,
 }
 
 app.use(cors(corsOption))

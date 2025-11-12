@@ -15,7 +15,7 @@ export interface IReloj{
 export interface ModalConfirmationProps {
     isOpen: boolean,
     onClose: () => void;
-    onConfirm: () => void;
+    onConfirm: () => void;  // Esta prop espera una función que no recibe parámetros y no retorna nada
     title?: string;
     message?: string;
     confirmText?: string;

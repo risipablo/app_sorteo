@@ -49,8 +49,8 @@ export function Sorteo(){
         if (lottery){
             setTimeout(() => {
                 setTitle(true)
-            }, 500);
-            setTimeout(() => setShowWinner(true),1000)
+            }, 800);
+            setTimeout(() => setShowWinner(true),1200)
         }
     })
 
